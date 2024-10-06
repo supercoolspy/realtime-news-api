@@ -1,14 +1,12 @@
 import { io } from "npm:socket.io-client@4.8.0"
 import { EventEmitter } from 'node:events';
 
-export function init(customFilter: string | undefined): EventEmitter {
-  let filter!: string
-  if (customFilter === undefined) {
-    filter = "all"
-  } else {
-    filter = customFilter
-  }
-
+/**
+ * Initializes the socket.io client
+ * @param filter The article filter to apply. Default is no filter
+ * @returns Event Emitter for when articles are recieved
+ */
+export function init(filter: string = "all"): EventEmitter {
   const socket = io("https://api.newsfilter.io")
   socket.on("connect", () => {
     socket.emit("action", {
