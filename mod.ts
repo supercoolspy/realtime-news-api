@@ -1,4 +1,4 @@
-import { io } from "npm:socket.io-client"
+import { io } from "npm:socket.io-client@4.8.0"
 import { EventEmitter } from 'node:events';
 
 export function init(customFilter: string | undefined): EventEmitter {
