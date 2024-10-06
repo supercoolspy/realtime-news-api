@@ -1,0 +1,6 @@
+{
+  "name": "@supercoolspy/realtime-news-api",
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  }
+}
